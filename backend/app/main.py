@@ -2,6 +2,10 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from app.routes.upload import router
 from fastapi.staticfiles import StaticFiles
+import os
+
+os.makedirs("generated_images", exist_ok=True)
+os.makedirs("uploads", exist_ok=True)
 
 
 app = FastAPI()
