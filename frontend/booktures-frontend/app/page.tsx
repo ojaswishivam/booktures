@@ -35,7 +35,7 @@ function Viewer({ text, image }: ViewerProps) {
 }
 
 export default function Home() {
-  const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
+  const BASE_URL = "https://booktures-backend.onrender.com";
   const [progress, setProgress] = useState({
     current: 0,
     total: 0,
