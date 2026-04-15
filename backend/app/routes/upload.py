@@ -71,7 +71,7 @@ def get_images():
 
     for i, img in enumerate(image_files):
         result.append({
-            "image": f"http://127.0.0.1:8000/images/{img}",
+            "image": f"https://booktures-backend.onrender.com/images/{img}",
             "text": pages[i] if i < len(pages) else ""
         })
 
