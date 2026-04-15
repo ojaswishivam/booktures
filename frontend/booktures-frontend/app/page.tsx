@@ -35,6 +35,7 @@ function Viewer({ text, image }: ViewerProps) {
 }
 
 export default function Home() {
+  const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
   const [progress, setProgress] = useState({
     current: 0,
     total: 0,
@@ -72,14 +73,14 @@ useEffect(() => {
   const [loading, setLoading] = useState(false);
 
   const fetchImages = async () => {
-    const res = await fetch("http://127.0.0.1:8000/images");
+    const res = await fetch(`${BASE_URL}/images`);
     const json = await res.json();
     setData(json.data);
   };
 
   const pollProgress = () => {
     const interval = setInterval(async () => {
-      const res = await fetch("http://127.0.0.1:8000/progress");
+      const res = await fetch(`${BASE_URL}/progress`);
       const data = await res.json();
 
       setProgress(data);
@@ -109,7 +110,7 @@ useEffect(() => {
     const formData = new FormData();
     formData.append("file", file);
 
-    await fetch("http://127.0.0.1:8000/upload", {
+    await fetch(`${BASE_URL}/upload`, {
       method: "POST",
       body: formData,
     });
