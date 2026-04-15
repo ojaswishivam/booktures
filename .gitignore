@@ -1,0 +1,8 @@
+backend/venv/
+backend/__pycache__/
+backend/.env
+backend/generated_images/
+backend/uploads/
+
+node_modules/
+.next/
